@@ -3,10 +3,12 @@ import reactLogo from '../../assets/react.svg'
 
 function Header() {
     return (
-        <div className='header-container'>
-            <img src={reactLogo} alt="Logo" className='react logo' />
-            <h1 className="header">React Resume Builder</h1>
-        </div>
+        <header className='header'>
+            <div className="header-container">
+                <img src={reactLogo} alt="Application Logo" className='header-logo' />
+                <h1 className="header-title">React CV Builder</h1>
+            </div>
+        </header>
     );
 }
 
