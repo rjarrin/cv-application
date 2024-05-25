@@ -3,6 +3,7 @@ import { useState } from 'react'
 // import viteLogo from '/vite.svg'
 import Header from './components/Layout/Header'
 import MainContent from './components/Layout/MainContent'
+import Footer from './components/Layout/Footer'
 import './styles/App.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <div>
         <Header></Header>
         <MainContent isEditing={isEditing}></MainContent>
+        <Footer></Footer>
       </div>
     );
   // const [count, setCount] = useState(0)
