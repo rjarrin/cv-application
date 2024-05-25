@@ -1,0 +1,38 @@
+.general-info {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 12px;
+    user-select: none;
+}
+
+.general-info.expanded form {
+    padding-top: 10px;
+}
+
+.general-info form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.general-info form input[type="text"] {
+    width: 95%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

@@ -1,3 +1,4 @@
+import GeneralInfo from '../GeneralInfo';
 import '../../styles/MainContent.css'
 
 function MainContent({isEditing}) {
@@ -6,8 +7,8 @@ function MainContent({isEditing}) {
             <aside className="column-left">
                 {isEditing && (
                     <>
-                        {/* <GeneralInfo></GeneralInfo>
-                        <Education></Education>
+                        <GeneralInfo></GeneralInfo>
+                        {/* <Education></Education>
                         <Experience></Experience> */}
                     </>
                 )}
