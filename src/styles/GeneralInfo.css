@@ -4,6 +4,7 @@
     margin-bottom: 20px;
     padding: 10px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .title {
@@ -22,6 +23,20 @@
 
 .general-info.expanded form {
     padding-top: 10px;
+    opacity: 1;
+    transform: scaleY(1);
+    visibility: visible;
+    height: auto;
+    max-height: 500px;
+}
+
+.general-info form {
+    opacity: 0;
+    transform: scaleY(0);
+    visibility: hidden;
+    height: 0;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .general-info form label {
