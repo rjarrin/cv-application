@@ -28,15 +28,16 @@
     visibility: visible;
     height: auto;
     max-height: 500px;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .general-info form {
     opacity: 0;
     transform: scaleY(0);
     visibility: hidden;
-    height: 0;
+    /* height: 0; */
     max-height: 0;
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .general-info form label {
