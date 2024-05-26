@@ -1,4 +1,4 @@
-/* .general-info {
+.expandable-window {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -21,7 +21,7 @@
     user-select: none;
 }
 
-.general-info.expanded form {
+.expandable-window.expanded form {
     padding-top: 10px;
     opacity: 1;
     transform: scaleY(1);
@@ -31,7 +31,7 @@
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.general-info form {
+.expandable-window form {
     opacity: 0;
     transform: scaleY(0);
     visibility: hidden;
@@ -39,15 +39,15 @@
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.general-info form label {
+.expandable-window form label {
     display: block;
     margin-bottom: 5px;
 }
 
-.general-info form input[type="text"] {
+.expandable-window form input[type="text"] {
     width: 95%;
     padding: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
-} */
+}
