@@ -1,0 +1,41 @@
+.education-form {
+    padding: 10px;
+}
+
+.education-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.education-form form div {
+    margin-bottom: 10px;
+}
+
+.education-form form label {
+    margin-bottom: 5px;
+}
+
+.education-form form input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.education-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.education-card h3 {
+    margin: 0;
+}
+
+.education-card p {
+    margin: 5px 0;
+}
+
+.education-card button {
+    margin-right: 5px;
+}

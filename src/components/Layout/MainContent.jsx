@@ -1,4 +1,5 @@
 import GeneralInfo from '../GeneralInfo';
+import Education from '../Education/Education';
 import '../../styles/MainContent.css'
 
 function MainContent({isEditing}) {
@@ -8,6 +9,8 @@ function MainContent({isEditing}) {
                 {isEditing && (
                     <>
                         <GeneralInfo></GeneralInfo>
+                        <Education></Education>
+
                         {/* <Education></Education>
                         <Experience></Experience> */}
                     </>
