@@ -5,11 +5,17 @@
 .education-form form {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
-.education-form form div {
+.education-form button {
+    margin-right: 10px;
     margin-bottom: 10px;
 }
+
+/* .education-form form div {
+    margin-bottom: 10px;
+} */
 
 .education-form form label {
     margin-bottom: 5px;

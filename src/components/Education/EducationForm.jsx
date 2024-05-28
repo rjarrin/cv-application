@@ -1,10 +1,13 @@
 import { useState } from "react";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css'
 
 function EducationForm({onCancel, onConfirm, initialData}) {
     const [schoolName, setSchoolName] = useState(initialData?.schoolName || '');
     const [schoolCity, setSchoolCity] = useState(initialData?.schoolCity || '');
-    const [startYear, setStartYear] = useState(initialData?.startYear || '');
-    const [endYear, setEndYear] = useState(initialData?.endYear || '');
+    const [startDate, setStartDate] = useState(initialData?.startDate ? new Date(initialData.startDate) : null);
+    const [endDate, setEndDate] = useState(initialData?.endDate ? new Date(initialData.endDate) : null);
+    const [isPresent, setIsPresent] = useState(initialData?.isPresent || false);
     const [achievements, setAchievements] = useState(initialData?.achievements || []);
 
     function handleAcheivementChange(index, value) {
@@ -25,7 +28,7 @@ function EducationForm({onCancel, onConfirm, initialData}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        onConfirm({schoolName, schoolCity, startYear, endYear, achievements});
+        onConfirm({schoolName, schoolCity, startDate, endDate: isPresent ? 'Present' : endDate, isPresent, achievements});
     }
 
     return (
@@ -40,14 +43,17 @@ function EducationForm({onCancel, onConfirm, initialData}) {
                     <input type="text" id="schoolCity" name="schoolCity" value={schoolCity} onChange={(e) => setSchoolCity(e.target.value)} required />
                 </div>
                 <div>
-                    <label htmlFor="startYear">Start Year:</label>
-                    <input type="number" id="startYear" name="startYear" value={startYear} onChange={(e) => setStartYear(e.target.value)} required />
+                    <label htmlFor="startDate">Start Date:</label>
+                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} dateFormat="MM/yyyy" showMonthYearPicker required ></DatePicker>
                 </div>
                 <div>
-                    <label htmlFor="endYear">End Year:</label>
-                    <input type="number" id="endYeah" name="endYear" value={endYear} onChange={(e) => setEndYear(e.target.value)} required />
+                    <label htmlFor="endDate">End Date:</label>
+                    <DatePicker selected={isPresent ? null : endDate} onChange={(date) => setEndDate(date)} dateFormat="MM/yyyy" showMonthYearPicker disabled={isPresent} ></DatePicker>
+                    <div>
+                        <input type="checkbox" id="isPresent" name="isPresent" checked={isPresent} onChange={(e) => setIsPresent(e.target.checked)}></input>
+                        <label htmlFor="isPresent">Present</label>
+                    </div>
                 </div>
-
                 <div>
                     <label htmlFor="acheivements">Achievements:</label>
                     {achievements.map((achievement, index) => (
@@ -58,8 +64,11 @@ function EducationForm({onCancel, onConfirm, initialData}) {
                     ))}
                     <button type="button" onClick={handleAddAchievement}>Add Achievement</button>
                 </div>
-                <button type="submit">Confirm</button>
-                <button type="button" onClick={onCancel}>Cancel</button>
+                <div>
+                    <button type="submit">Confirm</button>
+                    <button type="button" onClick={onCancel}>Cancel</button>
+                </div>
+                
             </form>
         </div>
     );
