@@ -5,10 +5,27 @@ function EducationForm({onCancel, onConfirm, initialData}) {
     const [schoolCity, setSchoolCity] = useState(initialData?.schoolCity || '');
     const [startYear, setStartYear] = useState(initialData?.startYear || '');
     const [endYear, setEndYear] = useState(initialData?.endYear || '');
+    const [achievements, setAchievements] = useState(initialData?.achievements || []);
+
+    function handleAcheivementChange(index, value) {
+        const updatedAcheivements = [...achievements];
+        updatedAcheivements[index] = value;
+        setAchievements(updatedAcheivements);
+    }
+
+    function handleAddAchievement() {
+        setAchievements([...achievements, '']);
+    }
+
+    function handleRemoveAchievement(index) {
+        const updatedAcheivements = [...achievements];
+        updatedAcheivements.splice(index, 1);
+        setAchievements(updatedAcheivements);
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
-        onConfirm({schoolName, schoolCity, startYear, endYear});
+        onConfirm({schoolName, schoolCity, startYear, endYear, achievements});
     }
 
     return (
@@ -29,6 +46,17 @@ function EducationForm({onCancel, onConfirm, initialData}) {
                 <div>
                     <label htmlFor="endYear">End Year:</label>
                     <input type="number" id="endYeah" name="endYear" value={endYear} onChange={(e) => setEndYear(e.target.value)} required />
+                </div>
+
+                <div>
+                    <label htmlFor="acheivements">Achievements:</label>
+                    {achievements.map((achievement, index) => (
+                        <div key={index}>
+                            <input type="text" value={achievement} onChange={(e) => handleAcheivementChange(index, e.target.value)} />
+                            <button type="button" onClick={() => handleRemoveAchievement(index)}>Remove</button>
+                        </div>
+                    ))}
+                    <button type="button" onClick={handleAddAchievement}>Add Achievement</button>
                 </div>
                 <button type="submit">Confirm</button>
                 <button type="button" onClick={onCancel}>Cancel</button>

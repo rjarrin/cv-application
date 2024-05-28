@@ -46,7 +46,6 @@ function Education() {
             )}
             {!isAdding && (
                 <>
-                    <button onClick={handleAddClick} disabled={isAdding}>Add Education</button>
                     {educationEntries.length === 0 ? (
                         <p>No Entries Yet</p>
                     ) : (
@@ -54,6 +53,7 @@ function Education() {
                             <EducationCard key={index} entry={entry} onEdit={() => handleEdit(index)} onDelete={() => handleDelete(index)} />
                         ))
                     )}
+                    <button onClick={handleAddClick} disabled={isAdding}>Add Education</button>
                 </>
             )}
         </ExpandableWindow>
