@@ -1,6 +1,7 @@
 import GeneralInfo from '../GeneralInfo';
 import Education from '../Education/Education';
 import '../../styles/MainContent.css'
+import Experience from '../Experience/Experience';
 
 function MainContent({isEditing}) {
     return (
@@ -10,6 +11,7 @@ function MainContent({isEditing}) {
                     <>
                         <GeneralInfo></GeneralInfo>
                         <Education></Education>
+                        <Experience></Experience>
 
                         {/* <Education></Education>
                         <Experience></Experience> */}

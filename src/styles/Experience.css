@@ -1,51 +1,48 @@
-.education-form {
+.experience-form {
     padding: 10px;
 }
 
-.education-form form {
+.experience-form form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.education-form button {
+.experience-form button {
     margin-right: 10px;
     margin-bottom: 10px;
 }
 
-/* .education-form form div {
-    margin-bottom: 10px;
-} */
-
-.education-form form label {
+.experience-form form label {
     margin-bottom: 5px;
 }
 
-.education-form form div {
+.experience-form form div {
     width: 100%;
 }
 
-.education-form form input {
+.experience-form form input {
     padding: 5px;
     border: 1px solid #ccc;
-    border-radius: 3px; 
+    border-radius: 3px;
+    width: 95%;
 }
 
-.education-card {
+.experience-card {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-.education-card h3 {
+.experience-card h3 {
     margin: 0;
 }
 
-.education-card p {
+.experience-card p {
     margin: 5px 0;
 }
 
-.education-card button {
+.experience-card button {
     margin-right: 5px;
 }

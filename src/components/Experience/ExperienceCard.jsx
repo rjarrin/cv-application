@@ -1,16 +1,16 @@
-function EducationCard({entry, onEdit, onDelete}) {
+function ExperienceCard({entry, onEdit, onDelete}) {
     return (
-        <div className="education-card">
-            <h3>{entry.schoolName}</h3>
-            <p>{entry.schoolCity}</p>
+        <div className="experience-card">
+            <h3>{entry.title}</h3>
+            <p>{entry.institution}</p>
             <p>{entry.startDate ? entry.startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : ''} - {entry.isPresent ? 'Present' : entry.endDate ? entry.endDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : ''}</p>
 
-            {entry.achievements.length > 0 && (
+            {entry.information.length > 0 && (
                 <>
-                    <h4>Achievements</h4>
+                    <h4>Additional Information</h4>
                     <ul>
-                        {entry.achievements.map((achievement, index) => (
-                            <li key={index}>{achievement}</li>
+                        {entry.information.map((info, index) => (
+                            <li key={index}>{info}</li>
                         ))}
                     </ul>
                 </>
@@ -18,7 +18,7 @@ function EducationCard({entry, onEdit, onDelete}) {
             <button onClick={onEdit}>Edit</button>
             <button onClick={onDelete}>Delete</button>
         </div>
-    ); 
+    )
 }
 
-export default EducationCard;
+export default ExperienceCard;
