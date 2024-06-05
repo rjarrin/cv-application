@@ -11,9 +11,12 @@
     "write": "prettier ./src/*.jsx --write"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.5",
     "react": "^18.2.0",
     "react-datepicker": "^6.9.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-to-pdf": "^1.0.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
