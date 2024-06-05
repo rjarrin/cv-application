@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '../../styles/ExpandableWindow.css'
 
 function ExpandableWindow({title, children}) {
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(true);
 
     function toggleExpansion() {
         setIsExpanded(!isExpanded);
