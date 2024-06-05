@@ -3,7 +3,8 @@ function EducationCard({entry, onEdit, onDelete}) {
         <div className="education-card">
             <h3>{entry.schoolName}</h3>
             <p>{entry.schoolCity}</p>
-            <p>{entry.startDate ? entry.startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : ''} - {entry.isPresent ? 'Present' : entry.endDate ? entry.endDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : ''}</p>
+            {/* <p>{entry.startDate ? entry.startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : ''} - {entry.isPresent ? 'Present' : entry.endDate ? entry.endDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : ''}</p> */}
+            <p>{entry.startDate} - {entry.isPresent ? 'Present' : entry.endDate}</p>
 
             {entry.achievements.length > 0 && (
                 <>
