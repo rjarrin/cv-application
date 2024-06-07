@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { store } from "../../store/store";
+import "../../styles/DocumentPreview.css";
 
 function DocumentPreview() {
     const [generalInfo, setGeneralInfo] = useState(store.getState().generalInfo);
@@ -16,38 +17,68 @@ function DocumentPreview() {
     }, []);
 
     return (
-        <div>
-            <h2>General Information:</h2>
-            <p>Name: {generalInfo.name}</p>
-            <p>Street Address: {generalInfo.streetAddress}</p>
-            <p>City: {generalInfo.city}</p>
-            <p>Postal Code: {generalInfo.postalCode}</p>
-            <p>Phone Number: {generalInfo.phoneNumber}</p>
-            <p>Email: {generalInfo.email}</p>
+        <div className="container">
+            <div className="header">
+                <h1 className="name">{generalInfo.name}</h1>
+                <p className="contactInfo">
+                    {generalInfo.streetAddress}, {generalInfo.city}, {generalInfo.postalCode}
+                </p>
+                <p className="contactInfo">{generalInfo.phoneNumber} | {generalInfo.email}</p>
+            </div>
 
-            <h2>Education:</h2>
-            {educationEntries.map(entry => (
-                <div key={entry.id}>
-                    <h3>{entry.schoolName}</h3>
-                    <p>{entry.schoolCity}</p>
-                    <p>{entry.startDate} - {entry.isPresent? 'Present' : entry.endDate}</p>
-                    {entry.achievements.map((achievement, index) => (
-                        <p key={index}>{achievement}</p>
+            <div className="mainContent">
+                <div className="section">
+                    <h2 className="sectionTitle">Education:</h2>
+                    {educationEntries.map(entry => (
+                        <div key={entry.id} className="entry">
+                            <h3 className="entryTitle">{entry.schoolName}</h3>
+                            <p className="entryDetails">{entry.schoolCity}</p>
+                            <p className="entryDetails">{entry.startDate} - {entry.isPresent ? 'Present' : entry.endDate}</p>
+                            <ul className="achievementList">
+                                {entry.achievements.map((achievement, index) => (
+                                    <li key={index} className="achievementItem">{achievement}</li>
+                                ))}
+                            </ul>
+                        </div>
                     ))}
                 </div>
-            ))}
 
-            <h2>Experience:</h2>
-            {experienceEntries.map(entry => (
-                <div key={entry.id}>
-                    <h3>{entry.title}</h3>
-                    <p>{entry.institution}</p>
-                    <p>{entry.startDate} - {entry.isPresent? 'Present' : entry.endDate}</p>
-                    {entry.information.map((info, index) => (
-                        <p key={index}>{info}</p>
+                <div className="section">
+                    <h2 className="sectionTitle">Experience:</h2>
+                    {experienceEntries.map(entry => (
+                        <div key={entry.id} className="entry">
+                            <h3 className="entryTitle">{entry.title}</h3>
+                            <p className="entryDetails">{entry.institution}</p>
+                            <p className="entryDetails">{entry.startDate} - {entry.isPresent ? 'Present' : entry.endDate}</p>
+                            <ul className="achievementList">
+                                {entry.information.map((info, index) => (
+                                    <li key={index} className="achievementItem">{info}</li>
+                                ))}
+                            </ul>
+                        </div>
                     ))}
                 </div>
-            ))}
+            </div>
+
+            <aside className="aside">
+                <img className="photo" src="https://via.placeholder.com/150" alt="Profile Photo" />
+                <h2 className="sectionTitle">Skills</h2>
+                <ul className="skillsList">
+                    <li className="skillItem">JavaScript</li>
+                    <li className="skillItem">React</li>
+                    <li className="skillItem">Redux</li>
+                    <li className="skillItem">HTML & CSS</li>
+                    <li className="skillItem">Node.js</li>
+                </ul>
+
+                <h2 className="sectionTitle">Achievements</h2>
+                <ul className="achievementList">
+                    <li className="achievementItem">Developed a full-stack web application</li>
+                    <li className="achievementItem">Implemented a responsive design</li>
+                    <li className="achievementItem">Optimized performance for a large-scale project</li>
+                    <li className="achievementItem">Contributed to open-source projects</li>
+                </ul>
+            </aside>
         </div>
     );
 }
