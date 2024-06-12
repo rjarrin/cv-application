@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { store } from "../../store/store";
 import "../../styles/DocumentPreview.css";
-
+import phoneIcon from '../../assets/phone.svg';
+import emailIcon from '../../assets/email.svg';
+import addressIcon from '../../assets/city.svg';
+import postalCodeIcon from '../../assets/city.svg';
 function DocumentPreview() {
     const [generalInfo, setGeneralInfo] = useState(store.getState().generalInfo);
     const [educationEntries, setEducationEntries] = useState(store.getState().education);
@@ -18,15 +21,29 @@ function DocumentPreview() {
 
     return (
         <div className="container">
-            <div className="header">
-                <h1 className="name">{generalInfo.name}</h1>
-                <p className="contactInfo">
-                    {generalInfo.streetAddress}, {generalInfo.city}, {generalInfo.postalCode}
-                </p>
-                <p className="contactInfo">{generalInfo.phoneNumber} | {generalInfo.email}</p>
-            </div>
-
             <div className="mainContent">
+                <div className="header">
+                    <h1 className="name">{generalInfo.name}</h1>
+                    <div className="contactGrid">
+                        <div className="contactItem">
+                            <img src={phoneIcon} alt="Phone" className="icon" />
+                            <span>{generalInfo.phoneNumber}</span>
+                        </div>
+                        <div className="contactItem">
+                            <img src={emailIcon} alt="Email" className="icon" />
+                            <span>{generalInfo.email}</span>
+                        </div>
+                        <div className="contactItem">
+                            <img src={postalCodeIcon} alt="Postal Code" className="icon" />
+                            <span>{generalInfo.postalCode}</span>
+                        </div>
+                        <div className="contactItem">
+                            <img src={addressIcon} alt="Address" className="icon" />
+                            <span>{generalInfo.streetAddress}</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="section">
                     <h2 className="sectionTitle">Education:</h2>
                     {educationEntries.map(entry => (

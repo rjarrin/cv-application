@@ -1,16 +1,29 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('../assets/Rubik.ttf');
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
 .container {
     display: flex;
     font-family: Arial, sans-serif;
     margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    /* padding: 20px; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 10px; */
     background-color: #f9f9f9;
+    font-family: MyFont;
 }
 
 .header {
-    text-align: center;
+    text-align: justify;
     margin-bottom: 20px;
+    width: 100%;
+    color: #333;
 }
 
 .name {
@@ -19,10 +32,25 @@
     font-weight: bold;
 }
 
-.contactInfo {
-    margin: 5px 0;
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
     font-size: 14px;
     color: #555;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
 }
 
 .mainContent {
@@ -40,6 +68,8 @@
     margin-bottom: 10px;
     color: #333;
     font-size: 18px;
+    text-align: justify;
+    margin-left: 20px;
 }
 
 .entry {
@@ -51,12 +81,16 @@
     color: #555;
     font-size: 16px;
     font-weight: bold;
+    text-align: justify;
+    margin-left: 20px;
 }
 
 .entryDetails {
     margin: 5px 0;
     color: #777;
     font-size: 14px;
+    text-align: justify;
+    margin-left: 20px;
 }
 
 .achievementList {
@@ -66,7 +100,7 @@
 
 .achievementItem {
     margin: 3px 0;
-    color: #777;
+    /* color: #777; */
     font-size: 14px;
 }
 
@@ -74,7 +108,18 @@
     flex: 1;
     padding: 20px;
     border-left: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: #082c69;
+    color: white;
+}
+
+.aside .sectionTitle {
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 18px;
+    text-align: justify;
+    margin-left: 20px;
 }
 
 .photo {
@@ -90,6 +135,6 @@
 
 .skillItem {
     margin: 5px 0;
-    color: #555;
+    /* color: #555; */
     font-size: 14px;
 }
